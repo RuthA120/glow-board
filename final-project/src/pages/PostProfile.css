@@ -1,0 +1,198 @@
+.post-profile-page {
+  margin: auto;
+}
+
+.loading-div{
+    left: 50%;
+    position: absolute;
+    font-size: 4rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.profile-header-div{
+    background-color: rgb(244, 229, 202);
+    color: black;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 20px;
+    margin-left: -10px;
+    height: 80px;
+    text-align: center;
+    width: 102.65%;
+}
+
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 5px;
+  font-size: 0.85rem;
+}
+
+.pill--type {
+  background-color: rgb(252, 117, 45);
+}
+
+.pill--producttype {
+  background-color: #97b7fc;
+}
+
+.pill--skintype {
+  background-color: rgb(251, 174, 255);
+}
+
+.pill--type.selected,
+.pill--producttype.selected,
+.pill--skintype.selected {
+  outline: none; 
+}
+
+.post-creator{
+  margin-left: 10px;
+  margin-top: -15px;
+}
+
+.preview-content{
+  margin-top: 15px;
+}
+
+.image-upvote-container{
+  margin-top: -245px;
+}
+
+.preview-image{
+  margin-top:20px;
+}
+
+.preview-tag {
+  font-size: 12px;
+  font-family: "Oswald", sans-serif;
+  padding: 0.4em 0.9em;
+  margin: 0.25em;
+  border-radius: 1em;
+  border: none;
+  outline-offset: 0;
+  cursor: default;
+  transform: scale(1); 
+  transform-origin: left;
+  white-space: nowrap;
+}
+
+.preview-container-tags {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 5px;
+  margin-top: -25px;
+}
+
+
+.comments-section {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.comment-card {
+  background: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  resize: none;
+}
+
+.comment-form button {
+  margin-top: 10px;
+  padding: 8px 16px;
+}
+
+.edit-delete-buttons {
+  margin-top: -3rem;
+  margin-left: 600px;
+}
+
+.edit-button,
+.delete-button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.comments-section {
+  position: relative;
+  margin-top: 150px;
+  background-color: #e5e5e5;
+}
+
+.comment {
+  border-top: 1px solid #8f8b8b;
+  padding: 10px 0;
+}
+
+.add-comment textarea {
+  width: 97%;
+  height: 80px;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.delete-button {
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  padding: 0.5em 1.2em;
+  border-radius: 1em;
+  border: none;
+  background-color: rgb(255, 109, 109);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  height: 50px;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 100px;
+}
+
+.edit-button {
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  padding: 0.5em 1.2em;
+  border-radius: 1em;
+  border: none;
+  height: 50px;
+  background-color: rgb(255, 174, 87);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 100px;
+}
+
+.edit-delete-buttons {
+  position: absolute;
+  top: 650px;
+  margin-left: 500px;
+  display: flex;
+  gap: 10px; 
+}
+
+.post-comment {
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  padding: 0.5em 1.2em;
+  border-radius: 1em;
+  border: none;
+  background-color: rgb(255, 225, 95);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  min-width: 100px;
+}

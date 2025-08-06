@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    background-color: rgb(174, 233, 167);
+    padding: 0 30px;
+    box-sizing: border-box; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.navbar-search {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 30px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    height: 40px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Oswald", sans-serif;
+    font-weight: 30;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.nav-button:hover {
+    background-color: #ddd;
+}

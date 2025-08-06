@@ -1,0 +1,79 @@
+.register-div{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+.register-page{
+    background-color: whitesmoke;
+    width: 425px;
+    height: 475px;
+    border-radius: 30px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid transparent;
+    background: linear-gradient(whitesmoke, whitesmoke) padding-box,
+                linear-gradient(to left, #FC752D, #FBAEFF, #6987C9) border-box;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.register-info-div{
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    margin-top: 150px;
+}
+
+.register-header{
+    font-size: 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50px;
+    position: absolute;
+}
+
+.info-div{
+    margin-left: 40px;
+}
+
+
+.info-input{
+    width: 350px;
+    height: 45px;
+    border-radius: 50px;
+    border-color: transparent;
+    font-size: 1rem;
+}
+
+.info-header{
+    font-size: 1.5rem;
+}
+
+.register-button{
+    background: black;
+    color: white;
+    font-size: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 0.5em 1em;
+    margin: 0.25em;
+    border-radius: 1em;
+    margin-top: 25px;
+    margin-left: 150px;
+    border: none;
+    cursor: pointer;
+    outline-offset: 1.5px;
+}
+
+.register-button:hover{
+    transform: scale(1.05);
+    background: linear-gradient(to left, #FC752D, #FBAEFF, #6987C9);
+    transition: all 0.5s ease;
+}
+
+.login-check-p{
+    margin-left: 100px;
+}
