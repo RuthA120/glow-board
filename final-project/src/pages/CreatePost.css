@@ -6,9 +6,7 @@
     color: black;
 }
 
-.pill:not(.pill--type--selected):hover{
-    background-color: rgba(163, 161, 161, 0.839);
-}
+
 
 .pill--type{
     background-color: rgb(252, 117, 45);
@@ -19,6 +17,8 @@
     border-radius: 1em;
     border: none;
     cursor: pointer;
+    border-width: 5px;
+    border-color: black;
     outline-offset: 1.5px;
 }
 
@@ -62,22 +62,18 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.pill--type.selected {
-  outline: 2px solid rgb(252, 117, 45); 
-}
 
-.pill--skintype.selected {
-  outline: 2px solid rgb(251, 174, 255); 
-}
-
+.pill--type.selected,
+.pill--skintype.selected,
 .pill--producttype.selected {
-  outline: 2px solid #97b7fc; 
+  box-shadow: 0 0 0 3px black;
+  transform: scale(1.05);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
 }
 
 button {
   transition: border 0.2s ease-in-out;
 }
-
 
 input{
     font-family: "Oswald", sans-serif;

@@ -3,7 +3,7 @@
     border-color: rgb(174, 233, 167);
     border-width: 50px;
     margin: auto;
-    width: 600px;
+    width: 550px;
     height: 250px;
     border-radius: 50px;
     padding: 10px;
@@ -71,7 +71,7 @@
 .feed-image-container {
     width: 200px;
     height: 180px;
-    margin-right: 60px;
+    margin-right: 20px;
     overflow: hidden;
     background-color: whitesmoke;
     border-color: whitesmoke;
@@ -87,6 +87,7 @@
 
 #upvote-icon-preview{
     margin-top: 12px;
+    margin-left: 80px;
 }
 
 .feed-upvote-div{
@@ -115,3 +116,7 @@
 .tag-skinproduct{ 
     background-color: #97b7fc; 
 }            
+
+.liked {
+  color: green;
+}

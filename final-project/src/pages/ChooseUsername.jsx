@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
+import HomeNavBar from '../components/HomeNavBar'
+import './ChooseUsername.css'
 
 function ChooseUsername() {
   const navigate = useNavigate();
@@ -24,24 +26,38 @@ function ChooseUsername() {
     console.error("Error upserting profile:", error.message);
     }
     else {
-      navigate('/feed');
+      window.location.href = '/feed';
     }
   };
 
   return (
-    <div className="choose-username-div">
-      <h2>Choose your username</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <button type="submit">Continue</button>
-        {errorMsg && <p>{errorMsg}</p>}
-      </form>
+    <div className="body-div">
+      <HomeNavBar />
+      <div className="login-div">
+            <div className="choose-username-page">
+                <h1 className="choose-username-header">Create a Username!</h1>
+                <form onSubmit={handleSubmit}>
+                <div className="login-info-div">
+                    <div className="userlogin-info-div">
+                        <input
+                          type="text"
+                          className="info-input"
+                          id="username-input"
+                          placeholder="Enter username"
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                          required
+                        />
+                    </div>
+                    <button type="submit" className="choose-username-button">Continue</button>
+                    {errorMsg && <p>{errorMsg}</p>}
+                </div>
+                </form>
+                <p className="user-check-p">
+                    Thank you for joining Glow Board!
+                </p>
+            </div>
+        </div>
     </div>
   );
 }

@@ -31,8 +31,32 @@ function Login() {
             return;
         }
 
-        console.log('User ID:', user.id); // ✅ Now safe to access
-        navigate('/feed'); // or wherever you want to go
+        const { data: profileData, error: profileError } = await supabase
+            .from('profiles')
+            .select('username')
+            .eq('id', user.id)
+            .single();
+
+        if (profileError && profileError.code === 'PGRST116'){
+            console.log('No profile found. Redirecting to username setup...');
+            window.location.href = '/choose-username';
+            return;
+        }
+
+        if (profileError) {
+            console.error('Profile lookup error:', profileError.message);
+            setErrorMsg('Something went wrong while checking profile.');
+            return;
+        }
+
+        if (!profileData?.username) {
+            console.log('Username missing. Redirecting to setup...');
+            window.location.href = '/choose-username';
+        } 
+        else {
+            console.log('Username exists. Redirecting to feed...');
+            window.location.href = '/feed';
+        }
     };
 
 

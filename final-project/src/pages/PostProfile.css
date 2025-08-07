@@ -1,3 +1,5 @@
+
+
 .post-profile-page {
   margin: auto;
 }
@@ -54,12 +56,13 @@
   margin-top: -15px;
 }
 
-.preview-content{
-  margin-top: 15px;
+.create-preview-bottom{
+  position:absolute;
+  top: 670px;
 }
 
-.image-upvote-container{
-  margin-top: -245px;
+.preview-content{
+  margin-top: 15px;
 }
 
 .preview-image{
@@ -87,13 +90,6 @@
   margin-top: -25px;
 }
 
-
-.comments-section {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-}
-
 .comment-card {
   background: white;
   padding: 10px;
@@ -116,8 +112,9 @@
 }
 
 .edit-delete-buttons {
-  margin-top: -3rem;
-  margin-left: 600px;
+  position: absolute;
+  top: 605px;
+  margin-left: 500px;
 }
 
 .edit-button,
@@ -128,9 +125,12 @@
 }
 
 .comments-section {
-  position: relative;
-  margin-top: 150px;
+  position: absolute;
+  width: 710px;
+  top: 700px;
   background-color: #e5e5e5;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .comment {
@@ -175,14 +175,6 @@
   min-width: 100px;
 }
 
-.edit-delete-buttons {
-  position: absolute;
-  top: 650px;
-  margin-left: 500px;
-  display: flex;
-  gap: 10px; 
-}
-
 .post-comment {
   font-size: 16px;
   font-family: "Oswald", sans-serif;
@@ -195,4 +187,15 @@
   white-space: nowrap;
   text-align: center;
   min-width: 100px;
+}
+
+.image-container{
+  max-width: 300px;
+  max-height: 300px;
+  top: 290px;
+  position: absolute;
+}
+
+.liked {
+  color: green;
 }

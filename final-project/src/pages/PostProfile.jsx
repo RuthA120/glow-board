@@ -7,6 +7,8 @@ import './PostProfile.css';
 function PostProfile() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isLiked, setIsLiked] = useState(false);
+  const [localUpvotes, setLocalUpvotes] = useState(0);
   const [post, setPost] = useState(null);
   const [tags, setTags] = useState([]);
   const [file, setFile] = useState(null);
@@ -78,8 +80,21 @@ function PostProfile() {
       setPost(postData);
       setTags(getTagsFromPost(postData));
       setFile(postData.img_or_video || null);
+      setLocalUpvotes(postData.upvote_count || 0);
     }
   };
+
+  const fetchLikedStatus = async (userId) => {
+      const { data } = await supabase
+        .from('post_upvotes')
+        .select('*')
+        .eq('post_id', id)
+        .eq('user_id', userId)
+        .single();
+
+      if (data) setIsLiked(true);
+  };
+
 
   const fetchComments = async () => {
     const { data: commentsData, error: commentsError } = await supabase
@@ -118,6 +133,49 @@ function PostProfile() {
       await fetchComments(); 
     }
   };
+
+  const handleLikeToggle = async () => {
+    if (!user) {
+      alert('You must be logged in to upvote');
+      return;
+    }
+
+    if (isLiked) {
+      const { error: deleteError } = await supabase
+        .from('post_upvotes')
+        .delete()
+        .eq('post_id', id)
+        .eq('user_id', user.id);
+
+      if (!deleteError) {
+        const newCount = localUpvotes - 1;
+        setIsLiked(false);
+        setLocalUpvotes(newCount);
+
+        await supabase
+          .from('posts')
+          .update({ upvote_count: newCount })
+          .eq('id', id);
+      }
+    } 
+    else {
+      const { error: insertError } = await supabase
+        .from('post_upvotes')
+        .insert({ post_id: id, user_id: user.id });
+
+      if (!insertError) {
+        const newCount = localUpvotes + 1;
+        setIsLiked(true);
+        setLocalUpvotes(newCount);
+
+        await supabase
+          .from('posts')
+          .update({ upvote_count: newCount })
+          .eq('id', id);
+      }
+    }
+  };
+
 
   const deletePost = async () => {
       const confirmDelete = window.confirm("Are you sure you want to delete this post?");
@@ -168,7 +226,7 @@ function PostProfile() {
           </div>
 
           <h1 className="preview-title">{post.title}</h1>
-          <div className="post-author-info">
+          <div aclassName="post-author-info">
             <p className="post-creator">@ {post.author?.username || 'Unknown'}</p>
           </div>
           <p className="preview-content">{post.content}</p>
@@ -178,8 +236,15 @@ function PostProfile() {
               {file && <img src={file} alt="Post content" className="preview-image" />}
             </div>
             <div className="create-preview-bottom">
-              <span className="material-symbols-outlined" id="upvote-icon-create-preview">thumb_up</span>
-              <p className="upvotes-preview">{post.upvote_count || 0} upvotes</p>
+              <span
+                className={`material-symbols-outlined ${isLiked ? 'liked' : ''}`}
+                id="upvote-icon-create-preview"
+                onClick={handleLikeToggle}
+                style={{ cursor: 'pointer' }}
+              >
+                thumb_up
+              </span>
+              <p className="upvotes-preview">{localUpvotes} upvotes</p>
             </div>
           </div>
 
@@ -211,7 +276,7 @@ function PostProfile() {
               <textarea
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
-                placeholder="Add a comment..."
+                placeholder="Add a comment!"
               />
               <button onClick={handleCommentSubmit} className="post-comment">Post Comment</button>
             </div>

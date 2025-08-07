@@ -7,6 +7,7 @@ import PostProfile from '../pages/PostProfile'
 import CreateUsername from '../pages/ChooseUsername'
 import EditPost from '../pages/EditPost';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function HomeNavBar() {
     const navigate = useNavigate();
@@ -27,8 +28,12 @@ function HomeNavBar() {
             <div className="home-navbar-links">
                 <button className="home-nav-button">About Us</button>
                 <button className="home-nav-button">FAQ</button>
-                <button className="home-nav-button">Login</button>
-                <button className="home-nav-button">Register</button>
+                <Link to="/login">
+                    <button className="home-nav-button">Login</button>
+                </Link>
+                <Link to="/register">
+                    <button className="home-nav-button">Register</button>
+                </Link>
             </div>
         </div>
     );

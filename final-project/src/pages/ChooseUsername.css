@@ -1,0 +1,60 @@
+.choose-username-div{
+    position: relative;
+    left: 50%;
+    top: 22%;
+    text-align: center;
+    width: 500px;
+    transform: translate(-50%, -50%);
+}
+
+.choose-username-header{
+    font-size: 2.5rem;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    top: 50px;
+    position: absolute;
+    width: 300px;
+}
+
+.choose-username-page{
+    background-color: whitesmoke;
+    width: 425px;
+    height: 300px;
+    border-radius: 30px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid transparent;
+    background: linear-gradient(whitesmoke, whitesmoke) padding-box,
+                linear-gradient(to left, #FC752D, #FBAEFF, #6987C9) border-box;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.choose-username-button{
+    background: black;
+    color: white;
+    font-size: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 0.5em 1em;
+    margin: 0.25em;
+    border-radius: 1em;
+    position: relative;
+    left: -75px;
+    margin-left: 170px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    outline-offset: 1.5px;
+}
+
+#username-input{
+    position: absolute;
+    top: 120px;
+}
+
+.user-check-p{
+    margin-left: 130px;
+    margin-top: 10px;
+}

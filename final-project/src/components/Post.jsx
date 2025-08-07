@@ -197,7 +197,7 @@ const Post = ({ post, user }) => {
                     onClick={handleLikeToggle}
                     className={`material-symbols-outlined ${isLiked ? 'liked' : ''}`}
                     id="upvote-icon-preview"
-                >
+                    >
                     thumb_up
                 </span>
                 <p className="feed-upvote-count">{localUpvotes} upvotes</p>

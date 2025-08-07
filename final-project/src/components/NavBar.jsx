@@ -9,6 +9,7 @@ import Feed from '../pages/Feed'
 import PostProfile from '../pages/PostProfile'
 import CreateUsername from '../pages/ChooseUsername'
 import EditPost from '../pages/EditPost';
+import { Link } from 'react-router-dom';
 
 function NavBar({ searchTerm, setSearchTerm, searchContext = 'posts' }) {
     const navigate = useNavigate();
@@ -35,8 +36,12 @@ function NavBar({ searchTerm, setSearchTerm, searchContext = 'posts' }) {
             onChange={(e) => setSearchTerm(e.target.value)}
         />
         <div className="home-navbar-links">
-            <button className="home-nav-button" onClick={Feed}>Home</button>
-            <button className="home-nav-button">Create a Post</button>
+            <Link to="/feed">
+                <button className="home-nav-button">Home</button>
+            </Link>
+            <Link to="/create-post">
+                <button className="home-nav-button">Create a Post</button>
+            </Link>
             <button className="home-nav-button">Product Pins</button>
             <button className="home-nav-button">My Page</button>
             <button className="home-nav-button" onClick={handleLogout}>Logout</button>
