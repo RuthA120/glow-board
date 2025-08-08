@@ -1,0 +1,29 @@
+.edit-post-body {
+  padding: 20px;
+}
+
+.edit-post-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.edit-submit-btn {
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.preview-image{
+    margin-top: -50px;
+}
+

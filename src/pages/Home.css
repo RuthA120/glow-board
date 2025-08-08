@@ -1,0 +1,135 @@
+.home-div{
+    background-color: whitesmoke;
+    width: 100vw;
+    max-height: 900px;
+}
+
+.welcome-div{
+    position: absolute;
+    bottom: 30px;
+}
+
+.welcome-header{
+    font-size: 8rem;
+    position: relative;
+    left: 30px;
+    top: 60px;
+}
+
+.container{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+  top: 20px;
+  left: 15px;
+}
+
+.container h1:nth-child(1) {
+  color: #000000;
+  font-size: 8rem;
+  font-weight: 800;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 520px;
+  animation: type 2s steps(40,end) forwards;
+}
+
+.container h1:nth-child(2) {
+  opacity: 0;
+  top: -62px;
+  background: linear-gradient(to left, #FC752D, #FBAEFF, #6987C9);
+  font-size: 8rem;
+  width: 520px;
+  white-space: nowrap;
+  -webkit-background-clip: text;
+  text-align: left;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+  animation: shring-animation 2.2s steps(40,end) 2s forwards, blink .5s step-end infinite alternate;
+}
+
+@keyframes shring-animation {
+  0% {
+    background-position: 0 0;
+    opacity: 0;
+    width: 0;
+  }
+  1% {
+    background-position: 0 0;
+    opacity: 1;
+    border-right: 1px solid #FC752D;
+  }
+  50% {
+    background-position: 150px 0;
+    opacity: 1;
+    border-right: 1px solid #FC752D;
+  }
+  100% {
+    background-position: 400px 0;
+    opacity: 1;
+    border-right: 1px solid transparent;
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  1%, 99%{
+    border-right: 1px solid black;
+  }
+  100%{
+    border-right: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.user-buttons-div{
+    position: relative;
+    left: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    top: -60px;
+}
+
+.user-button{
+    background: black;
+    color: white;
+    font-size: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 0.5em 1em;
+    margin: 0.25em;
+    border-radius: 1em;
+    border: none;
+    cursor: pointer;
+    outline-offset: 1.5px;
+}
+
+
+.user-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to left, #FC752D, #FBAEFF, #6987C9);
+  transition: all 0.5s ease;
+}
+
+.bio-info{
+  color: black;
+  position: absolute;
+  font-family: "Oswald", sans-serif;
+  text-align: left;
+  font-size: 1.25rem;
+  width: 650px;
+  top: 300px;
+  left: 35px;
+}
+
+
