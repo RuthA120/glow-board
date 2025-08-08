@@ -1,7 +1,8 @@
 # Glow Board
 **Glow Board** is a community driven space where users can post any questions or advice they have regarding skincare, explore products, and connect with each other through discussions.
-This app focuss on delivering an interactive, modern, and fun UI experience with real-time features for skincare enjoyers!
-I built Glow Board with React and used Supabase to support real-time authentication, secure logouts, and post and comment creation. 
+
+- This app focuses on delivering an interactive, modern, and fun UI experience with real-time features for skincare enjoyers!
+- I built Glow Board with React and used Supabase to support real-time authentication, secure logouts, and post and comment creation. 
 
 ---
 
