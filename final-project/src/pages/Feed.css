@@ -1,6 +1,6 @@
 .feed-body-div{
     min-height: 100vh; 
-    width: 1910px;
+     max-width: 100vw;
     height: auto;
 }
 
@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 170px;
+  margin-top: 150px;
   position: relative;
   flex-wrap: wrap;
 }

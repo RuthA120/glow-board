@@ -184,7 +184,7 @@ function Feed() {
       const { data: userData, error: tableError } = await supabase
         .from('profiles')
         .select('username')
-        .eq('id', user.id) // Make sure this column matches your FK setup
+        .eq('id', user.id) 
         .single();
 
       if (tableError) {
