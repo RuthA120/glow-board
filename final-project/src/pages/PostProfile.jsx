@@ -189,7 +189,8 @@ function PostProfile() {
       if (error) {
         console.error("Error deleting post:", error);
         alert("Failed to delete post.");
-      } else {
+      } 
+      else {
         navigate("/feed"); 
       }
     };

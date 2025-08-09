@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './CreatePost.css'
 import NavBar from '../components/NavBar'
 import { supabase } from '../client';
+import { useNavigate } from 'react-router';
 
 
 function CreatePost () {
@@ -13,6 +14,7 @@ function CreatePost () {
     const [isVisible, setIsVisible] = useState(false);
     const [imageUrl, setImageUrl] = useState('');
     
+    const navigate = useNavigate();
     
     const toggleVisibility = () => {
         console.log("Preview button clicked");
@@ -128,7 +130,7 @@ function CreatePost () {
             return;
         }
 
-        window.location = "/create-post";
+        navigate("/feed");
     };
 
 

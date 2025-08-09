@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '../client';
 import './Login.css';
 import HomeNavBar from '../components/HomeNavBar';
+import { Link } from 'react-router-dom';
 
-function Login() {
+function Login(){
     const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ function Login() {
 
         const user = data?.user;
         if (!user) {
-            setErrorMsg('Login successful, but user is null. Check email confirmation.');
+            setErrorMsg('Please check email confirmation and sign in through there.');
             return;
         }
 
@@ -37,25 +38,22 @@ function Login() {
             .eq('id', user.id)
             .single();
 
-        if (profileError && profileError.code === 'PGRST116'){
+        if(profileError && profileError.code === 'PGRST116'){
             console.log('No profile found. Redirecting to username setup...');
-            window.location.href = '/choose-username';
+            navigate('/choose-username')
             return;
         }
 
-        if (profileError) {
-            console.error('Profile lookup error:', profileError.message);
+        if(profileError){
             setErrorMsg('Something went wrong while checking profile.');
             return;
         }
 
-        if (!profileData?.username) {
-            console.log('Username missing. Redirecting to setup...');
-            window.location.href = '/choose-username';
+        if(!profileData?.username){
+            navigate('/choose-username')
         } 
-        else {
-            console.log('Username exists. Redirecting to feed...');
-            window.location.href = '/feed';
+        else{
+            navigate('/feed');
         }
     };
 
@@ -91,7 +89,9 @@ function Login() {
                 <button className="login-button" onClick={handleLogin}>Login</button>
                 <p className="register-check-p">
                     Don't have an account?&ensp;&ensp;
-                    <a href='/register'>Click here to register</a>
+                    <Link to="/register">
+                        <a>Click here to register</a>
+                    </Link>
                 </p>
             </div>
         </div>

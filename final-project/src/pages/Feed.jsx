@@ -14,7 +14,6 @@ function Feed() {
   const [username, setUsername] = useState('');
 
 
-  // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 18;
 
@@ -90,14 +89,12 @@ function Feed() {
 
   const filterPosts = () => {
       return allPosts.filter(post => {
-        // Search filter (title or content match)
         if (searchTerm.trim() !== '') {
           const lower = searchTerm.toLowerCase();
           const matches = post.title?.toLowerCase().includes(lower) || post.content?.toLowerCase().includes(lower);
           if (!matches) return false;
         }
 
-        // Filter by Post Type
         if (
           selectedOptions['Post Type'] &&
           selectedOptions['Post Type'].length > 0 &&
@@ -109,7 +106,6 @@ function Feed() {
           return false;
         }
 
-        // Filter by Skin Types
         if (
           selectedOptions['Skin Types'] &&
           selectedOptions['Skin Types'].length > 0 &&
@@ -122,7 +118,6 @@ function Feed() {
           return false;
         }
 
-        // Filter by Products
         if (
           selectedOptions['Products'] &&
           selectedOptions['Products'].length > 0 &&
@@ -180,7 +175,6 @@ function Feed() {
 
       setUser(user);
 
-      // Now fetch from 'users' table using auth user id
       const { data: userData, error: tableError } = await supabase
         .from('profiles')
         .select('username')
