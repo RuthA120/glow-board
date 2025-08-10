@@ -31,6 +31,11 @@ function Register() {
         navigate('/login');
     };
 
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        navigate('/login')
+    }
+
 
 
     return (
@@ -66,7 +71,7 @@ function Register() {
                 <button className="register-button" onClick={handleRegister}>Register</button>
                 <p className="login-check-p">
                     Have an account?&ensp;&ensp;
-                    <a href='/login'>Click here to login</a>
+                    <a onClick={handleLogin}>Click here to login</a>
                 </p>
             </div>
         </div>

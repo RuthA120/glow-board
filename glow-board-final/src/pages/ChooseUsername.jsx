@@ -26,7 +26,7 @@ function ChooseUsername() {
     console.error("Error upserting profile:", error.message);
     }
     else {
-      window.location.href = '/feed';
+      navigate('/feed')
     }
   };
 
