@@ -10,7 +10,7 @@ import Login from './pages/Login'
 import Feed from './pages/Feed'
 import PostProfile from './pages/PostProfile'
 import CreateUsername from './pages/ChooseUsername'
-import '../src/index.css'
+import './index.css'
 import EditPost from './pages/EditPost';
 
 
