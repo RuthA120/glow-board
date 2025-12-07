@@ -1,6 +1,6 @@
 # *Glow Board*
 
-This web app: **This web app allows users to create, edit, and preview skincare-related posts with customizable tags and image uploads. It features a clean, intuitive interface that supports content categorization and rich post previews for an engaging user experience.**
+**This web app allows users to create, edit, and preview skincare-related posts with customizable tags and image uploads. It features a clean, intuitive interface that supports content categorization and rich post previews for an engaging user experience.**
 
 ## Required Features
 
